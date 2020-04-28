@@ -1,0 +1,28 @@
+{
+    "name": "qlik-sense-task",
+    "version": "0.0.1",
+    "description": "A simple Qlik Sense task manager (using a server certificate)",
+    "main": "src/qst.js",
+    "scripts": {
+        "test": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pangodream/qlik-sense-task.git"
+    },
+    "keywords": [
+        "qliksense",
+        "nodejs",
+        "task"
+    ],
+    "author": "Pangodream",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pangodream/qlik-sense-task/issues"
+    },
+    "homepage": "https://github.com/pangodream/qlik-sense-task#readme",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "crypto-js": "^4.0.0"
+    }
+}
