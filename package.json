@@ -1,17 +1,19 @@
 {
-    "name": "qlik-sense-task",
-    "version": "0.0.1",
-    "description": "A simple Qlik Sense task manager (using a server certificate)",
-    "main": "src/qst.js",
+    "name": "qlik-sense-qrs",
+    "version": "0.1.0",
+    "description": "Qlik Sense QRS API wrapper (using a server certificate)",
+    "main": "src/qlik-sense-qrs.js",
     "scripts": {
         "test": ""
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pangodream/qlik-sense-task.git"
+        "url": "git+https://github.com/pangodream/qlik-sense-qrs.git"
     },
     "keywords": [
         "qliksense",
+        "qrs",
+        "api",
         "nodejs",
         "task"
     ],

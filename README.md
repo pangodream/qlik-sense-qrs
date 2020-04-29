@@ -1,9 +1,17 @@
-## Qlik Sense Tasks API
+## Qlik Sense QRS API - Node.js
 
 Qlik Sense QRS API wrapper for Node.js
 
+### Installation
 ```
-const qsqrs = require('../src/qlik-sense-qrs');
+npm install qlik-sense-qrs --save
+```
+
+### Some examples 
+(see file test/test.js)
+
+```JS
+const qsqrs = require('qlik-sense-qrs');
 
 //Set an array of options
 let options = {

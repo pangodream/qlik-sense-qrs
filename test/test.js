@@ -1,4 +1,4 @@
-const qsqrs = require('../src/qlik-sense-qrs');
+const qsqrs = require('qlik-sense-qrs');
 
 //Set an array of options
 let options = {
