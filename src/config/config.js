@@ -15,7 +15,7 @@ var confStore = {
 };
 
 //Validates options array and throws an exception if an option is not valid
-const configure = function(options = {}) {
+const apply = function(options = {}) {
     //Validate array of options
     setHost(options.host);
     setCertFile(options.certFile);
@@ -88,7 +88,7 @@ const getXrfKey = () => {
 
 
 module.exports = {
-    configure,
+    apply,
     getConfiguration,
     setHost,
     getHost,
