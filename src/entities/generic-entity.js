@@ -1,5 +1,10 @@
+/**
+ * Import own libraries
+ */
 const http = require('../http/http');
-
+/**
+ * Array containing the list of all allowed objects to be invoked by generic entity methods
+ */
 const allowedEntities = [
     'about', 'analyticconnection', 'app', 'appavailability', 'appcomponent',
     'appcontentquota', 'appseedinfo', 'appstatus', 'binarydelete', 'binarydownload',
@@ -17,7 +22,14 @@ const allowedEntities = [
     'tag', 'task', 'taskoperational', 'tempcontent', 'user',
     'userdirectory', 'userdirectoryconnector', 'usersynctask', 'usersynctaskoperational', 'virtualproxyconfig',
 ];
-
+/**
+ * Returns the list of all the ocurrences of the specified object 
+ * or the ones filtered by the filter parameter (e.g.: 'id eq 123456-3456-...')
+ * @param {String} entityName One of the allowed object names
+ * @param {String} filter Filter to be applied or nothing
+ * @returns {Promise} API request data or an error
+ * @throws {Error} When the specified object is none of the allowed ones
+ */
 exports.list = async(entityName, filter = '') => {
     let lEntityName = entityName.toLowerCase();
     if (allowedEntities.indexOf(lEntityName) == -1) {
