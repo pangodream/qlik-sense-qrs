@@ -7,8 +7,7 @@ Qlik Sense QRS API wrapper for Node.js
 npm install qlik-sense-qrs --save
 ```
 
-### Some examples 
-(see file test/test.js)
+### Configuration
 
 ```JS
 const qsqrs = require('qlik-sense-qrs');
@@ -28,6 +27,47 @@ qsqrs.config.apply(options);
 console.clear();
 //Show the current configuration
 console.log(qsqrs.config.getConfiguration());
+```
+### Some use examples 
+```JS
+//Executes a task by its name and checks execution status (just code)
+(async() => {
+    try {
+        let name = 'My Task A01';
+        let data = await qsqrs.entities.task.list(`name eq '${name}'`);
+        let id = data[0].id;
+        data = await qsqrs.entities.task.start(id);
+        await qsqrs.util.wait(5000);
+        data = await qsqrs.entities.task.list(`id eq ${id}`);
+        let execData = data[0].operational.lastExecutionResult;
+        console.log(`\tStatus:\t${execData.status}\n\tStart:\t${execData.startTime}\n\tStop:\t${execData.stopTime}`);
+    } catch (err) {
+        console.log(err);
+    }
+})();
+
+//Executes a task by its name and checks execution status (Console comments)
+(async() => {
+    try {
+        let name = 'My Task A01';
+        console.log('Retrieve task data by name');
+        let data = await qsqrs.entities.task.list(`name eq '${name}'`);
+        let id = data[0].id;
+        console.log(`Task id is ${id}\nStart task specifying its id`);
+        data = await qsqrs.entities.task.start(id);
+        console.log('Task started. Wait for 5 seconds....');
+        await qsqrs.util.wait(5000);
+        console.log('Retrieve task data by id');
+        data = await qsqrs.entities.task.list(`id eq ${id}`);
+        console.log('Show execution / progress result');
+        let execData = data[0].operational.lastExecutionResult;
+        console.log(`\tStatus:\t${execData.status}\n\tStart:\t${execData.startTime}\n\tStop:\t${execData.stopTime}`);
+    } catch (err) {
+        console.log(err);
+    }
+})();
+
+
 
 //List all of the apps
 (async() => {
