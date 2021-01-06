@@ -24,7 +24,7 @@
     },
     "homepage": "https://github.com/pangodream/qlik-sense-task#readme",
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "crypto-js": "^4.0.0"
     }
 }
